@@ -2,28 +2,29 @@ package co.grandcircus.donutsapi;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DonutResponse {
-    @JsonProperty("count")
-    private int numberOfDonts;
-    @JsonProperty("results")
-    private List<Donut> donutResults;
 
-    public int getNumberOfDonts() {
-        return numberOfDonts;
+    private int count;
+
+    private List<Donut> results;
+
+    public int getCount() {
+        return count;
     }
 
-    public void setNumberOfDonts(int numberOfDonts) {
-        this.numberOfDonts = numberOfDonts;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public List<Donut> getDonutResults() {
-        return donutResults;
+    public List<Donut> getResults() {
+        return results;
     }
 
-    public void setDonutResults(List<Donut> donutResults) {
-        this.donutResults = donutResults;
+    public void setResults(List<Donut> results) {
+        this.results = results;
     }
+
+
 
 }

@@ -1,29 +1,35 @@
 package co.grandcircus.donutsapi;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Donut {
     private int id;
-    @JsonProperty("ref")
-    private String donutInfo;
+    private String ref;
     private String name;
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
-    public String getDonutInfo() {
-        return donutInfo;
+
+    public String getRef() {
+        return ref;
     }
-    public void setDonutInfo(String donutInfo) {
-        this.donutInfo = donutInfo;
+
+    public void setRef(String ref) {
+        this.ref = ref;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
+
+
 }

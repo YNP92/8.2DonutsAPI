@@ -10,15 +10,12 @@ public class HomeController {
     @Autowired
     DonutService donutService;
 
+
     @RequestMapping("/")
-    public String index(){
+    public String index(Model model) {
+        DonutResponse response = donutService.getDonutResponse();
+        model.addAttribute("response", response);
+        System.out.println(response.getCount());
         return "index";
     }
-    // @RequestMapping("/")
-    // public String index(Model model){
-    //     DonutResponse response = donutService.getDonutResponse();
-    //     model.addAttribute("response", response);
-    //     System.out.println("IM HERE");
-    //     return "index";
-    // }
 }
