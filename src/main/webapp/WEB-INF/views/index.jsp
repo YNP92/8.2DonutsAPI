@@ -19,10 +19,8 @@
   </head>
   <body>
     <span> &#x1F369;</span>Donut Menu<span> &#127849;</span>
-    <c:forEach var="donuts" items="${response.results}">
-      <a href="${donuts.ref}">${donuts.name}</a><br>
+    <c:forEach var="donut" items="${response}">
+      <a href="/details?id=${donut.id}">${donut.name}</a><br>
     </c:forEach>
-   
-    </h1>
   </body>
 </html>

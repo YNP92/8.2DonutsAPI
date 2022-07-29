@@ -5,23 +5,14 @@ import java.util.List;
 
 public class DonutResponse {
 
-    private int count;
 
-    private List<Donut> results;
+    private List<DonutDetails> results;
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public List<Donut> getResults() {
+    public List<DonutDetails> getResults() {
         return results;
     }
 
-    public void setResults(List<Donut> results) {
+    public void setResults(List<DonutDetails> results) {
         this.results = results;
     }
 

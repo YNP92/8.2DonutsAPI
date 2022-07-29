@@ -1,9 +1,13 @@
 package co.grandcircus.donutsapi;
 
+import java.security.DrbgParameters.Reseed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -13,9 +17,14 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        DonutResponse response = donutService.getDonutResponse();
-        model.addAttribute("response", response);
-        System.out.println(response.getCount());
+        model.addAttribute("response", donutService.getDonutResponse());
+        // System.out.println(response.getCount());
         return "index";
+    }
+
+    @RequestMapping("/details")
+    public String showDetails(@RequestParam Integer id, Model model) {
+        model.addAttribute("response", donutService.getDonutbyID(id));
+        return "details";
     }
 }
